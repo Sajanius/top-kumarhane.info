@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Casino ve Bahis İncelemeleri</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #0f172a;
+      color: white;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    h1 {
+      font-size: 26px;
+      margin-bottom: 30px;
+    }
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 24px;
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+    }
+    .card img {
+      width: auto;
+      max-height: 60px;
+      margin-bottom: 16px;
+    }
+    .card-title {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+    button {
+      padding: 14px 28px;
+      font-size: 16px;
+      background-color: #38bdf8;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      cursor: not-allowed;
+      margin-top: 30px;
+      opacity: 0.6;
+    }
+    button.active {
+      cursor: pointer;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎰 En Popüler Casino ve Bahis İncelemeleri</h1>
+
+  <div class="card" data-href="https://top-kumarhane.info/1win-online-casino-ve-spor-bahisleri-platformu/">
+    <img src="https://top-kumarhane.info/wp-content/uploads/2025/04/1Win-2.webp" alt="1WIN">
+    <div class="card-title">1WIN Casino İncelemesi</div>
+  </div>
+
+  <div class="card" data-href="https://top-kumarhane.info/1xbet-online-casino-ve-spor-bahisleri-platformu/">
+    <img src="https://top-kumarhane.info/wp-content/uploads/2025/04/1xbet-300x200-1.jpg" alt="1XBET">
+    <div class="card-title">1XBET Casino İncelemesi</div>
+  </div>
+
+  <div class="card" data-href="https://top-kumarhane.info/alev-online-casino-ve-spor-bahisleri-platformu/">
+    <img src="https://top-kumarhane.info/wp-content/uploads/2025/04/alev-casino-logo-1-300x208-1.webp" alt="Alev Casino">
+    <div class="card-title">Alev Casino İncelemesi</div>
+  </div>
+
+  <div class="card" data-href="https://top-kumarhane.info/ramenbet-online-casino-ve-spor-bahisleri-platformu/">
+    <img src="https://top-kumarhane.info/wp-content/uploads/2025/04/logo-ramenbet-fon-360x250-1-300x208-1.webp" alt="RamenBet">
+    <div class="card-title">RamenBet Casino İncelemesi</div>
+  </div>
+
+  <button id="goBtn" disabled>5 saniye içinde aktifleşecek...</button>
+
+  <script>
+    const btn = document.getElementById("goBtn");
+    let countdown = 5;
+
+    const interval = setInterval(() => {
+      countdown--;
+      if (countdown > 0) {
+        btn.innerText = countdown + " saniye içinde aktifleşecek...";
+      } else {
+        clearInterval(interval);
+        btn.disabled = false;
+        btn.classList.add("active");
+        btn.innerText = "İncelemeyi Aç";
+        btn.onclick = () => {
+          const cards = document.querySelectorAll(".card");
+          const i = Math.floor(Math.random() * cards.length);
+          const link = cards[i].getAttribute("data-href");
+          window.location.href = link;
+        };
+        // Автоклик через 2 сек, если пользователь не нажал
+        setTimeout(() => {
+          if (!btn.disabled) btn.click();
+        }, 2000);
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
